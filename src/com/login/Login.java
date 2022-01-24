@@ -8,14 +8,19 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-@WebServlet("/Login")
+import com.login.dao.LoginDao;
+
+@WebServlet("/")
 public class Login extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String uname = request.getParameter("uname");
 		String pass = request.getParameter("pass");
 		
-		if(uname.equals("pranav") && pass.equals("bl")){
+		LoginDao dao = new LoginDao();
+		
+//		if(uname.equals("pranav") && pass.equals("bl")){
+		if(dao.checkDetails(uname, pass)){
 			HttpSession session = request.getSession();
 			session.setAttribute("username", uname);
 			response.sendRedirect("welcome.jsp");

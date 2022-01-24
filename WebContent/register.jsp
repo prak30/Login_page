@@ -6,13 +6,15 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
 </head>
-<body bgcolor="cyan">
-<h1 style="color:red">LOGIN PAGE</h1>
-	<form action="Login">
+<body bgcolor="pink">
+	<h1 style="color:red">REGISTRATION PAGE</h1>
+	<form action="registration" method="post">
+		Enter firstName:<input type="text" name="fname"><br>
+		Enter lastName:<input type ="text" name="lname"><br>
 		Enter username: <input type="text" name="uname"><br>
 		Enter password: <input type="password" name="pass"><br>
-		<input type="submit" value="login">
-		<a href="register.jsp">Register</a>
+		Reenter password:<input type="password" name="pass"><br>
+		<input type="submit" value="register">
 	
 	</form>
 </body>
